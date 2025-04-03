@@ -21,6 +21,7 @@ class RoleSeeder extends Seeder
             'create-product',
             'edit-product',
             'delete-product',
+            'view-product-customer',
 
 
             'view-category',
@@ -39,7 +40,7 @@ class RoleSeeder extends Seeder
             'create-product',
             'edit-product',
             'delete-product',
-
+            'view-product-customer',
 
             'view-category',
             'create-category',
@@ -54,7 +55,7 @@ class RoleSeeder extends Seeder
         ]);
 
         $customer->givePermissionTo([
-            'view-product'
+            'view-product-customer',
         ]);
     }
 }

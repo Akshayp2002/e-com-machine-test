@@ -11,19 +11,30 @@
     {{ $slot }}
 </a>
 <div class="hidden md:flex items-center space-x-6">
-    <a href="{{ route('category.index') }}"
-        class="text-gray-700 hover:bg-gray-200 px-4 py-2 rounded {{ request()->is('category') ? 'bg-blue-400 text-white font-bold' : '' }}">
-        Category
-    </a>
+    @can('view-category')
+        <a href="{{ route('category.index') }}"
+            class="text-gray-700 hover:bg-gray-200 px-4 py-2 rounded {{ request()->is('category') ? 'bg-blue-400 text-white font-bold' : '' }}">
+            Category
+        </a>
+    @endcan
 
-    <a href="{{ route('subcategory.index') }}"
-        class="text-gray-700 hover:bg-gray-200 px-4 py-2 rounded {{ request()->is('subcategory') ? 'bg-blue-400 text-white font-bold' : '' }}">
-        Sub Category
-    </a>
+    @can('view-sub-category')
+        <a href="{{ route('subcategory.index') }}"
+            class="text-gray-700 hover:bg-gray-200 px-4 py-2 rounded {{ request()->is('subcategory') ? 'bg-blue-400 text-white font-bold' : '' }}">
+            Sub Category
+        </a>
+    @endcan
 
-    <a href="{{ route('products.index') }}"
-        class="text-gray-700 hover:bg-gray-200 px-4 py-2 rounded {{ request()->is('products') ? 'bg-blue-400 text-white font-bold' : '' }}">
-        Products
+    @can('view-product')
+        <a href="{{ route('products.index') }}"
+            class="text-gray-700 hover:bg-gray-200 px-4 py-2 rounded {{ request()->is('products') ? 'bg-blue-400 text-white font-bold' : '' }}">
+            Products
+        </a>
+    @endcan
+
+    <a href="{{ route('carts.index') }}"
+        class="text-gray-700 hover:bg-gray-200 px-4 py-2 rounded {{ request()->is('carts') ? 'bg-blue-400 text-white font-bold' : '' }}">
+        Carts
     </a>
 
 </div>

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('color')->nullable();
             $table->foreignId('category_id')->constrained('categories');
             $table->foreignId('sub_category_id')->constrained('sub_categories');
-            $table->enum('status', ['active', 'inactive']);
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });
     }

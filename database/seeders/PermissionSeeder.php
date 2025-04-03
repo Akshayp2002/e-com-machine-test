@@ -11,7 +11,7 @@ class PermissionSeeder extends Seeder
     /**
      * Run the database seeds.
      */
- 
+
     public function run(): void
     {
         $permissions = [
@@ -19,6 +19,8 @@ class PermissionSeeder extends Seeder
             'create-product',
             'edit-product',
             'delete-product',
+
+            'view-product-customer',
 
             'view-category',
             'create-category',
@@ -29,6 +31,8 @@ class PermissionSeeder extends Seeder
             'create-sub-category',
             'edit-sub-category',
             'delete-sub-category'
+
+
         ];
 
         // Looping and Inserting Array's Permissions into Permission Table
@@ -36,5 +40,4 @@ class PermissionSeeder extends Seeder
             Permission::create(['name' => $permission]);
         }
     }
- 
 }
